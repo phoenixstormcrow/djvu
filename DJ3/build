@@ -1,0 +1,2 @@
+cp ./chooser.css ./web-export
+cp -r ./fonts ./web-export

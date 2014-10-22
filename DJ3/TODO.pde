@@ -1,0 +1,6 @@
+/*
+
+there is a bug with the crossfade. The crossfade value gets overridden whenever another volume control is changed.
+probably not gonna fix it today.
+
+*/
