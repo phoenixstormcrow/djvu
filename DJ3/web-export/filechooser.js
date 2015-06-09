@@ -10,13 +10,27 @@ function Chooser(fs) {
     this.div = document.createElement('div');
     this.div.className = 'chooser hidden';
     this.listElem = document.createElement('ul');
+    
+    /* FIXME */
+    this.notImplemented = document.createElement('p');
+    this.notImplemented.textContent = "This feature is not available in this demo.";
+    
     this.importButton = document.createElement('button');
     this.importButton.id = 'importButton';
+    
+    /* FIXME */
+    this.importButton.disabled = true;
+    
     this.importButton.innerHTML = 'Import files';
     this.cancelButton = document.createElement('button');
     this.cancelButton.id = 'cancelButton';
-    this.cancelButton.innerHTML = 'Cancel';   
-    this.div.appendChild(this.listElem);
+    this.cancelButton.innerHTML = 'Cancel';
+   
+    /* FIXME */
+    this.div.appendChild(this.notImplemented);
+    
+//    this.div.appendChild(this.listElem);
+
     this.div.appendChild(document.createElement('hr'));//for layout ease
     this.div.appendChild(this.importButton);
     this.div.appendChild(this.cancelButton);
@@ -46,16 +60,17 @@ Chooser.prototype.update = function () {
 };
 
 Chooser.prototype.populate = function () {
-    var ls = this.fsys.wavs,
-        le = this.listElem;
-    le.innerHTML = '';
-    for (var i = 0, l = ls.length; i < l; ++i) {
-        var li = document.createElement('li');
-        li.id = i;
-        li.onclick = this.lsclick.bind(this);
-        li.innerHTML = ls[i].name;
-        le.appendChild(li);
-    }
+
+//    var ls = this.fsys.wavs,
+//        le = this.listElem;
+//    le.innerHTML = '';
+//    for (var i = 0, l = ls.length; i < l; ++i) {
+//        var li = document.createElement('li');
+//        li.id = i;
+//        li.onclick = this.lsclick.bind(this);
+//        li.innerHTML = ls[i].name;
+//        le.appendChild(li);
+//    }
 };
 
 Chooser.prototype.lsclick = function lsclick(e) {
