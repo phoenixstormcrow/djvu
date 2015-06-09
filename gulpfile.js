@@ -19,22 +19,23 @@ gulp.task('lint', function () {
 });
 
 gulp.task('browserify', ['lint'], function () {
-    return browserify('./main.js')
+    return browserify('./djvu.js')
         .bundle()
-        .pipe(source('main-bundle.js'))
+        .pipe(source('djvu-bundle.js'))
         .pipe(gulp.dest('./build'));
 
 });
 
 gulp.task('watch', [], function() {
-    var bundler = watchify(browserify('./main.js', { debug: true }));
+    var bundler = watchify(browserify('./djvu.js', { debug: true }));
 
     bundler.on('update', rebundle);
 
     function rebundle() {
+        console.log('rebundling');
         return bundler.bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-            .pipe(source('main-bundle.js'))
+            .pipe(source('djvu-bundle.js'))
             .pipe(gulp.dest('./build'));
     }
 
