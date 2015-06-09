@@ -50,7 +50,7 @@ FileSystem.prototype.readDir = function () {
     var dirReader = this.fs.root.createReader();
     var entries = [];
     var obj = this;
-    
+
     var readEntries = function () {
         dirReader.readEntries(function(results) {
             if (!results.length) {
@@ -62,7 +62,7 @@ FileSystem.prototype.readDir = function () {
             }
         }, errorHandler);
     };
-    
+
     //start reading
     readEntries();
 };
@@ -129,7 +129,8 @@ function createInput() {
 */
 function getFS() {
   fsys = new FileSystem();
-  fsys.get();
+/* FIXME */
+  // fsys.get();
 }
 
 window.addEventListener('load', createInput, false);
